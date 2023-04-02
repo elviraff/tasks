@@ -1,3 +1,4 @@
+//base
 //  [even-or-odd](https://www.codewars.com/kata/even-or-odd)
     function defineEven (number) {
         return (number % 2 == 0) ? "Even" : "Odd"
@@ -75,4 +76,82 @@
         }
         return str
     }
-    
+
+    //array
+    //[sum-of-positive](https://www.codewars.com/kata/sum-of-positive)
+    function positiveSum(arr) {
+    let positiveArr = arr.filter(item => item>0)
+    let result = positiveArr.reduce((sum, current) => sum + current, 0)
+    return result
+    }
+    //[shortest-word](https://www.codewars.com/kata/shortest-word)
+    function findShort(s){
+    let arrSum = s.split(' ').map(item => {
+    let sum = 0
+    for (let i=0; i<item.length; i++){
+    sum++
+    }
+    return sum
+    })
+    return arrSum.reduce((item, min) => {return item<min ? item : min})
+    } 
+    or
+    function findShort(s){
+        return s
+          .split(' ')
+          .map(a => a.length)
+          .reduce((item, min) => {return item < min ? item : min})
+      }
+
+    //[x]  [list-filtering](https://www.codewars.com/kata/list-filtering) - done
+    //[square-every-digit](https://www.codewars.com/kata/square-every-digit) - этой задачки нет
+
+    //[Build a square](https://www.codewars.com/kata/59a96d71dbe3b06c0200009c)
+    function generateShape(integer){
+    let result = ''
+    for (let j = 0; j< integer; j++){
+    let str = ''
+    for (let i=0; i<integer; i++){
+    str += '+'
+    }
+    result = result + str
+    if (j<integer-1) {
+    result += '\n'
+    }
+    }
+    return result
+    }
+    //[Friend or Foe](https://www.codewars.com/kata/55b42574ff091733d900002f)
+    function friend(friends){
+    return friends.filter(item => item.length == 4)
+    }
+    //[Smallest value of an array](https://www.codewars.com/kata/544a54fd18b8e06d240005c0)
+    function min(arr, toReturn) {
+    const value = arr.reduce ((min, current) => {
+    if (min < current) {
+    return min
+    }
+    else return current
+    })
+    if (toReturn == 'value') {
+    return value
+    }
+    else return arr.indexOf(value)
+    }
+    //[find-the-capitals-1](https://www.codewars.com/kata/find-the-capitals-1)
+    var capitals = function (word) {
+    return word.split('').reduce((accumulator, currentValue, index) => {
+    if (currentValue == currentValue.toUpperCase()) {
+    accumulator.push(index)
+    }
+    return accumulator
+    }, [])
+    };
+    //[insert-dashes](https://www.codewars.com/kata/insert-dashes)
+    function insertDash(num) {
+    return num
+    .toString()
+    .split('')
+    .map((item, index,arr) => (item%2 != 0) && (arr[index+1] % 2 !=0)&&(index!=arr.length-1) ? `${item}-` : item)
+    .join('')
+    }
