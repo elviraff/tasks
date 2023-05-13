@@ -1,0 +1,254 @@
+//[playing-with-digits](https://www.codewars.com/kata/playing-with-digits) 
+    function digPow(n, p){
+        let arr = n.toString().split("")
+        let sum = 0
+        for (let i = 0; i<arr.length; i++) {
+            sum += Math.pow(arr[i],p)
+            p++
+        }
+        let result = sum/n
+        if (Number.isInteger(result)) {
+            return result
+        }
+        else return -1
+    }
+
+   //[homogenous-arrays](https://www.codewars.com/kata/homogenous-arrays) 
+    function filterHomogenous(arrays) {
+        let res = []
+        arrays.forEach((item) => {
+          let type = typeof(item[0])
+          let value = true
+          for (let i=1; i< item.length; i++) {
+            if (typeof(item[i]) != type){
+            value = false
+            }
+          }
+          if (value == true && item.length>0) {
+          res.push(item)
+        }
+        })
+      return res;
+    }
+
+    //[**make-a-square-box](https://www.codewars.com/kata/make-a-square-box)
+    function box(n){
+        let str = ""
+        let result = []
+        for (let i=0; i<n; i++){
+            for (let j=0; j < n; j++){
+                if ((i == 0 || i == n-1) || (j == 0 || j == n-1)) {
+                    str += "-"
+                }
+                else {
+                    str += " "
+                }
+            }
+            result.push(str)
+            str=""
+        }
+        return result
+    }
+
+    //[Write Number in Expanded Form](https://www.codewars.com/kata/5842df8ccbd22792a4000245) 
+    function expandedForm(num) {
+        let str = num.toString().split('')
+        let res, newS
+        let length = str.length
+        for (let i = 0; i<length; i++) {
+            newS = str[i]*Math.pow(10,(length-(i+1)))
+            if (newS) {
+            res += `${newS}`
+            if ((i<length-1) && (res != num)){
+                res += `+`
+            }
+            }
+        }
+        return res
+    }
+
+   //[Length of missing array](https://www.codewars.com/kata/57b6f5aadb5b3d0ae3000611)
+    function getLengthOfMissingArray(arrayOfArrays) {
+        if (!arrayOfArrays.length) {
+            return 0
+        }
+        for (let i=0; i< arrayOfArrays.length; i++) {
+            if ((!arrayOfArrays[i].length)) {
+                return 0
+            }
+        }
+        let result = arrayOfArrays.sort((a,b) => a.length-b.length)
+        for (let i = 1; i< result.length; i++) {
+            if (result[i].length == result[i-1].length+1) {
+                continue
+            }
+            else return result[i-1].length+1
+        }
+        return 0;
+    }
+
+    //https://www.codewars.com/kata/54b42f9314d9229fd6000d9c
+    function duplicateEncode(word){
+        let arr = word.split('').map(item => item.toLowerCase())
+        let obj = {}
+        let result = ""
+        for (let i=0; i<arr.length; i++){
+        if (!obj[arr[i]]){
+            obj[arr[i]] = 1
+          }
+          else {
+            obj[arr[i]] ++
+          }
+        }
+      
+        for (let i=0; i<arr.length; i++){
+    
+         if (obj[arr[i]] == 1) {
+            result += "("
+          }
+          else {
+            result += ")"
+          }
+        }
+        word.split('').forEach(item => {
+          if (item == item.toUpperCase()){
+            return "should ignore case"
+            }
+        })
+        return result
+    }
+
+    //[flatten-and-sort-an-array](https://www.codewars.com/kata/flatten-and-sort-an-array)
+    function flattenAndSort(array) {
+        let result = []
+        array.forEach(item => {
+            for (let i=0; i< item.length; i++){
+            result.push(item[i])
+            }
+        })
+        return result.sort((a,b) => a-b)
+    }
+
+    //[Data Reverse](https://www.codewars.com/kata/569d488d61b812a0f7000015)
+    function dataReverse(data) {
+        let newArr = []
+        let res =[]
+        for (let i=0; i< data.length; i+=8){
+            newArr.push(data.slice(i, i+8))
+        }
+        newArr
+            .reverse()
+            .forEach(item => {
+                item.forEach(item => res.push(item))
+            })
+        return res
+    }
+
+    //[Format a string of names like "Bart, Lisa & Maggie"](https://www.codewars.com/kata/53368a47e38700bd8300030d)
+    function list(names){
+        let str =""
+        if (names.length == 1) {
+            str += names[0].name
+        }
+        else if (names.length == 2) {
+            str += `${names[0].name} & ${names[1].name}`
+        }
+        else if (names.length) {
+            str = names[0].name
+            for (let i=1; i<names.length-1; i++){
+                str += `, ${names[i].name}`
+            }
+            str +=  `& ${names[names.length-1].name}`
+        }
+        
+        return str
+    }
+
+    //[Convert the score](https://www.codewars.com/kata/5b6c220fa0a661fbf200005d)
+    function scoreboard(string){
+        let obj = {"one": 1,"two": 2,"three": 3,"four": 4,"five": 5,"six": 6,"seven": 7,"eight":8,"nine":9,"nil":0}
+        let arrResult = []
+        string.split(" ").forEach(item => {
+            if (obj[item] || obj[item] ==0){
+                arrResult.push(obj[item])
+            }
+        })
+        return arrResult
+    }
+
+   //[Make a function that does arithmetic!](https://www.codewars.com/kata/583f158ea20cfcbeb400000a)
+    function arithmetic(a, b, operator){
+        let obj = {
+            "add": "+",
+            "subtract": "-",
+            "multiply": "*",
+            "divide": "/"
+        }
+        let str
+        if (obj[operator]){
+            str =` ${a}${obj[operator]}${b} `
+        }
+        return eval(str)
+    }
+
+   //[pluck](https://www.codewars.com/kata/pluck)
+    function pluck(objs, name) {
+        let result = []
+        objs.forEach(item => {
+            if (item[name]) {
+                result.push(item[name])
+            }
+            else result.push(undefined)
+        })
+        return result
+    }
+
+   //[remove-duplicate-words](https://www.codewars.com/kata/remove-duplicate-words)
+    function removeDuplicateWords (s) {
+        let arr = s.split(' ')
+        let res = []
+        for (let i=0; i<arr.length; i++) {
+            if (!res.includes(arr[i])){
+            res.push(arr[i])
+            }
+            else continue
+        }
+        return res.join(' ')
+    }
+
+    //[coding-meetup-number-2-higher-order-functions-series-greet-developers](https://www.codewars.com/kata/coding-meetup-number-2-higher-order-functions-series-greet-developers)
+    function greetDevelopers(list) {
+        return list.map(item => {
+            item.greeting = `Hi ${item.firstName}, what do you like the most about ${item.language}?`
+            return item
+        })
+    }
+
+    //[Convert Hash To An Array](https://www.codewars.com/kata/59557b2a6e595316ab000046)
+    function convertHashToArray(hash){
+        let result = []
+        let arr = []
+        let entries = Object.entries(hash)
+        for (const [key, value] of entries) {
+            arr.push(key, value)
+            result.push(arr)
+            arr = []
+        }
+        return result.sort()
+    }
+
+   //[The Office I - Outed](https://www.codewars.com/kata/57ecf6efc7fe13eb070000e1)
+    function outed(meet, boss){
+        let amount = Object.keys(meet).length
+        let sum = 0
+        for (let [key, val] of Object.entries(meet)){
+            if (key == boss) {
+                val *= 2
+            }
+            sum += val
+        }
+        if (sum/amount <= 5){
+            return 'Get Out Now!'
+        }
+        else return 'Nice Work Champ!'
+    }
