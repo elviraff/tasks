@@ -1,0 +1,1 @@
+export const tableHeaders= ["","Rank", "Name", "Price", "Market cap", "VWAP 24Hr", "Supply", "Volume 24Hr", "Change 24Hr"]

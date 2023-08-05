@@ -1,0 +1,42 @@
+.nav {
+    display: flex;
+
+    width: 100%;
+    border-bottom: 1px solid rgb(231, 227, 227);
+    border-top: 1px solid rgb(231, 227, 227);
+    padding: 10px;
+  }
+
+  .nav_link {
+    margin-left: 30px;
+    text-decoration: none;
+    color: black;
+    cursor:default;
+  }
+
+  .nav_link:hover {
+    color: rgb(137, 29, 239);
+  }
+
+  .nav_button {
+    margin-left:  auto;
+    margin-right: 30px;
+    background-color: rgb(224, 201, 246);
+    color: black;
+    border-radius: 5px;
+  }
+
+  .nav_button:hover {
+    background-color: rgb(141, 77, 201);
+    color: white;
+  }
+
+  .nav_wallet {
+    margin-right: 30px;
+    width: 100px;
+  }
+
+  .nav_search {
+    margin-right: 30px;
+    border-radius: 5px;
+  }

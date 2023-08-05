@@ -1,0 +1,46 @@
+
+
+.modal_window {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0 10px 0;
+    margin: 0;
+}
+.modal_header{
+    border-bottom: 1px solid rgb(170, 166, 166);
+    padding: 0px 0px 10px 20px;
+}
+.modal_header_text{
+    padding: 10px;
+}
+.modal_content {
+    margin: 20px 30px 0 30px;
+    display: flex;
+    justify-content:flex-start
+}
+.modal_content_element{
+    margin-right: 20px;
+}
+
+.modal_content_text{
+    font-size: small;
+}
+
+.modal_button {
+    margin-left:  auto;
+    margin-right: 30px;
+    background-color: rgb(224, 201, 246);
+    color: black;
+    border-radius: 5px;
+  }
+
+  .modal_button:hover {
+    background-color: rgb(141, 77, 201);
+    color: white;
+  }
+
+
+.modal_content_card_number{
+
+
+}

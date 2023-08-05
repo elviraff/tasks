@@ -1,0 +1,11 @@
+.cell {
+
+}
+
+.row:hover{
+    background-color: rgb(244, 248, 248);
+}
+
+.hide {
+    height: 20px;
+}
